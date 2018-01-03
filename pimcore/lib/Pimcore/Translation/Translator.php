@@ -313,7 +313,7 @@ class Translator implements TranslatorInterface, TranslatorBagInterface
                         $t = $class::getByKey($id);
                         if (!$t->hasTranslation($locale)) {
                             $t->addTranslation($locale, '');
-                        } else {
+                        } elseif($translated != $id) {
                             return $translated;
                         }
                     } catch (\Exception $e) {
